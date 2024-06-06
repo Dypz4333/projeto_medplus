@@ -9,6 +9,10 @@ export const Temas = extendTheme({
       500: '#339CFF',
       800: '#0B3B60'
     },
+    brown: {
+      500: '#754127',
+      400: '#ab5327'
+    },
     white: '#fff',
     black: '#000'
   },

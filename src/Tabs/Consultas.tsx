@@ -71,10 +71,10 @@ export default function Consultas({ navigation }: NavigationProps<'Consultas'>) 
 
   return (
     <ScrollView p="5">
-      <Titulo color="blue.500">Minhas consultas</Titulo>
+      <Titulo color="black">Minhas consultas</Titulo>
       <Botao mt={5} mb={5} onPress={() => navigation.navigate('Explorar')}>Agendar nova consulta</Botao>
 
-      <Titulo color="blue.500" fontSize="lg" alignSelf="flex-start" mb={2}>Próximas consultas</Titulo>
+      <Titulo color="black" fontSize="lg" alignSelf="flex-start" mb={2}>Próximas consultas</Titulo>
       {consultasProximas.map((consulta) =>
         <CardConsulta
           key={consulta.id}
@@ -89,7 +89,7 @@ export default function Consultas({ navigation }: NavigationProps<'Consultas'>) 
 
       <Divider mt={5} />
 
-      <Titulo color="blue.500" fontSize="lg" alignSelf="flex-start" mb={2}>Consultas passadas</Titulo>
+      <Titulo color="black" fontSize="lg" alignSelf="flex-start" mb={2}>Consultas passadas</Titulo>
       {consultasPassadas.map((consulta) =>
         <CardConsulta
           key={consulta.id}

@@ -30,6 +30,7 @@ export default function Explorar({ navigation }) {
   return (
     <ScrollView flex={1} bgColor="white">
       <VStack flex={1} alignItems="flex-start" justifyContent="flex-start" p={5}>
+        <Titulo alignSelf={"center"} color={"brown.500"}>Agende aqui sua consulta</Titulo>
         <Box w="100%" borderRadius="lg" p={3} mt={5} shadow="1" borderRightRadius="md">
           <EntradaTexto
             placeholder="Digite a especialidade"
@@ -47,7 +48,7 @@ export default function Explorar({ navigation }) {
           <Botao mt={1} onPress={() => navigation.goBack()}>Voltar</Botao>
         </Box>
 
-        <Titulo color="blue.500" alignSelf="center">Resultado da Busca</Titulo>
+        <Titulo color="brown.500" alignSelf="center">Resultado da Busca</Titulo>
         {resultadoBusca.length < 1 && (
           <Titulo alignSelf={"center"}>
             Médico não encontrado

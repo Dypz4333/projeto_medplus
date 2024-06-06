@@ -7,15 +7,16 @@ interface ButtonProps extends IButtonProps {
   color?: string;
 }
 
-export function Botao({ children, autoSize = false, color, ...rest }: ButtonProps){
-
+export function Botao({ children, autoSize = false, color = 'orange.500', ...rest }: ButtonProps){
   return (
     <Button
       w={autoSize ? 'auto' : '100%'}
-      bg={color || 'blue.800'}
+      bg={color}
       mt={10}
       borderRadius="lg"
       _text={{ color: 'white' }}
+      _pressed={{ bg: color ? 'orange.600' : 'orange.600' }}
+      _hover={{ bg: color }}
       {...rest}
     >
       {children}

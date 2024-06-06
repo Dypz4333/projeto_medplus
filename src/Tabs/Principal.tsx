@@ -35,7 +35,7 @@ export default function Principal({navigation}){
     <ScrollView flex={1} bgColor="white">
       <VStack flex={1} alignItems="flex-start" justifyContent="flex-start" p={5}>
         <Image source={Logo} alt="Logo" mt={10} />
-        <Titulo color="blue.500">Boas-vindas!</Titulo>
+        <Titulo color="brown.400">Boas-vindas!</Titulo>
 
         <Box w="100%" borderRadius="lg" p={3} mt={10} shadow="1" borderRightRadius="md">
         <EntradaTexto
@@ -67,7 +67,7 @@ export default function Principal({navigation}){
         <VStack space={3} divider={<Divider />} w="100%">
           {
             depoimentos.map(depoimento => (
-              <Box key={depoimento.id} w="100%" borderRadius="lg" p={3}>
+              <Box key={depoimento.id} w="100%" shadow={2} borderRadius="lg" p={3}>
                 <Text color="gray.300" fontSize="md" textAlign="justify">
                   {depoimento.text}
                 </Text>

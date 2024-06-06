@@ -21,7 +21,7 @@ export function CardConsulta({
   onPress
 }: CardProps) {
   return (
-    <VStack w="100%" bg={foiAtendido ? 'blue.100' : 'white'} p="5" borderRadius="lg" shadow="2" mb={5}>
+    <VStack w="100%" bg={foiAtendido ? 'gray.200' : 'white'} p="5" borderRadius="lg" shadow="2" mb={5}>
       <VStack flexDir="row">
         <Avatar size="lg" source={{ uri: foto }} />
         <VStack pl="4">
@@ -30,7 +30,7 @@ export function CardConsulta({
           <Text>{data}</Text>
         </VStack>
       </VStack>
-      <Botao mt={4} onPress={onPress}>
+      <Botao color='orange.400' mt={4} onPress={onPress}>
         {foiAgendado ? 'Cancelar' : 'Agendar consulta'}
       </Botao>
     </VStack>

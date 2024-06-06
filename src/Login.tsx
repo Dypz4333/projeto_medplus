@@ -55,13 +55,13 @@ export default function Login({ navigation }: any) {
     <VStack flex={1} alignItems="center" justifyContent="center" p={5}>
       <Image source={Logo} alt="Logo Voll" />
 
-      <Titulo>
+      <Titulo color={'orange.400'}>
         Faça login em sua conta
       </Titulo>
       <Box>
         <EntradaTexto
           label="Email"
-          placeholder="Insira seu endereço de e-mail"
+          placeholder="Insira seu e-mail"
           value={email}
           onChangeText={setEmail}
         />
@@ -73,7 +73,7 @@ export default function Login({ navigation }: any) {
           secureTextEntry
         />
       </Box>
-      <Botao onPress={login}>Entrar</Botao>
+      <Botao w={'70%'} onPress={login}>Entrar</Botao>
 
       <Link href='https://www.google.com.br' mt={2}>
         Esqueceu sua senha?
@@ -82,7 +82,7 @@ export default function Login({ navigation }: any) {
       <Box w="100%" flexDirection="row" justifyContent="center" mt={8}>
         <Text>Ainda não tem cadastro? </Text>
         <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-          <Text color="blue.500">
+          <Text color="brown.500">
             Faça seu cadastro!
           </Text>
         </TouchableOpacity>

@@ -90,7 +90,11 @@ export default function Cadastro({ navigation }: any) {
 
   return (
     <ScrollView flex={1} p={5}>
+
+<Botao w='20%' onPress={() => navigation.navigate('Login')}>{"<"}</Botao>
       <Image source={Logo} alt="Logo Voll" alignSelf="center" />
+
+
 
       <Titulo>
         {secoes[numSecao].titulo}
