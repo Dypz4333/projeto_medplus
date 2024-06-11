@@ -1,10 +1,11 @@
 import { VStack, Text, ScrollView, Avatar, Divider } from 'native-base'
 import { Titulo } from '../componentes/Titulo'
-import { pegarDadosPaciente } from '../servicos/PacienteServico'
+import { deletarDadosPaciente, pegarDadosPaciente } from '../servicos/PacienteServico'
 import { useEffect, useState } from 'react'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Paciente } from '../interfaces/Paciente';
 import { Botao } from '../componentes/Botao';
+import axios from 'axios';
 
 export default function Perfil({ navigation }) {
   const [dadosPaciente, setDadosPaciente] = useState({} as Paciente);
@@ -28,30 +29,51 @@ export default function Perfil({ navigation }) {
     navigation.replace('Login');
   }
 
+  async function excluir() {
+    try {
+      await AsyncStorage.removeItem('token');
+      const pacienteId = await AsyncStorage.getItem('pacienteId');
+      if (pacienteId) {
+        await deletarDadosPaciente(pacienteId);
+      }
+      await AsyncStorage.removeItem('pacienteId');
+      navigation.replace('Login');
+    } catch (error) {
+      console.error("Erro ao excluir dados do paciente:", error);
+    }
+  }
+
+
+
+
+
+
+
   return (
     <ScrollView flex={1}>
       <VStack flex={1} alignItems="center" p={5}>
         <Titulo color="brown.500">Meu Perfil</Titulo>
 
-        <Avatar size="xl" source={{ uri: dadosPaciente?.imagem }} mt={5} />
+        <Avatar size="xl" borderColor={'black'} borderWidth={2} source={{ uri: dadosPaciente?.imagem }} mt={5} />
 
         <Titulo color="brown.500">Informações pessoais</Titulo>
         <Titulo fontSize="lg" mb={1} color="brown.500">{dadosPaciente.nome}</Titulo>
-        <Text >Email: {dadosPaciente?.email}</Text>
-        <Text >Estado: {dadosPaciente?.endereco?.estado}</Text>
-        <Text >Telefone: {dadosPaciente?.telefone}</Text>
+        <Text fontSize="md" fontWeight="semibold">Email: {dadosPaciente?.email}</Text>
+        <Text fontSize="md" fontWeight="semibold">Estado: {dadosPaciente?.endereco?.estado}</Text>
+        <Text fontSize="md" fontWeight="semibold">Telefone: {dadosPaciente?.telefone}</Text>
 
         <Divider mt={5} />
 
         <Titulo color="brown.500" mb={1}>Planos de Saúde</Titulo>
         {
           dadosPaciente?.planosSaude?.map((plano, index) => (
-            <Text key={index}>{plano}</Text>
+            <Text fontSize="md" fontWeight="semibold" key={index}>{plano}</Text>
           ))
         }
         <Botao onPress={deslogar}>
           Deslogar
         </Botao>
+        <Botao mt={2} onPress={excluir}>Excluir perfil</Botao>
       </VStack>
     </ScrollView>
   )

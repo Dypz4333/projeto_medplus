@@ -76,7 +76,7 @@ export default function Consultas({ navigation }: NavigationProps<'Consultas'>) 
 
       <Titulo color="black" fontSize="lg" alignSelf="flex-start" mb={2}>Próximas consultas</Titulo>
       {consultasProximas.map((consulta) =>
-        <CardConsulta
+        <CardConsulta 
           key={consulta.id}
           nome={consulta?.especialista?.nome}
           especialidade={consulta?.especialista?.especialidade}

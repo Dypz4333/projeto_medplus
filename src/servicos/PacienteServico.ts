@@ -32,3 +32,12 @@ export async function pegarDadosPaciente(id: string) {
     console.log(error);
   }
 }
+
+export async function deletarDadosPaciente(id: string) {
+  try {
+    const resultado = await api.delete(`/paciente/${id}`);
+    return resultado.data;
+  } catch (error) {
+    console.log(error);
+  }
+}

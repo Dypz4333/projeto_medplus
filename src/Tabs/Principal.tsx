@@ -63,11 +63,11 @@ export default function Principal({navigation}){
           </VStack>
         ))}
 
-        <Titulo color="blue.800" alignSelf="center">Depoimentos</Titulo>
+        <Titulo color="brown.400" mb={3} alignSelf="center">Depoimentos</Titulo>
         <VStack space={3} divider={<Divider />} w="100%">
           {
             depoimentos.map(depoimento => (
-              <Box key={depoimento.id} w="100%" shadow={2} borderRadius="lg" p={3}>
+              <Box key={depoimento.id} w="100%" borderColor={"black"} borderWidth={1} borderRadius="lg" p={3}>
                 <Text color="gray.300" fontSize="md" textAlign="justify">
                   {depoimento.text}
                 </Text>

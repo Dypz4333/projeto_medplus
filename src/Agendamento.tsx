@@ -11,11 +11,11 @@ export default function Agendamento({ route, navigation }: any) {
     const toast = useToast();
 
     async function agendar() {
-        const pacieteId = await AsyncStorage.getItem('pacienteId');
+        const pacienteId = await AsyncStorage.getItem('pacienteId');
         const { especialistaId } = route.params
-        if (!pacieteId || !especialistaId || !data) return
+        if (!pacienteId || !especialistaId || !data) return
         const dataFormatada = converterStringParaData(data);
-        const resultado = await agendarConsulta(dataFormatada, especialistaId, pacieteId)
+        const resultado = await agendarConsulta(dataFormatada, especialistaId, pacienteId)
         if (resultado) {
             toast.show({
                 title: 'Consulta agendada com sucesso!',

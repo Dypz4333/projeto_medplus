@@ -73,7 +73,7 @@ export default function Login({ navigation }: any) {
           secureTextEntry
         />
       </Box>
-      <Botao w={'70%'} onPress={login}>Entrar</Botao>
+      <Botao w={'100%'} onPress={login}>Entrar</Botao>
 
       <Link href='https://www.google.com.br' mt={2}>
         Esqueceu sua senha?
