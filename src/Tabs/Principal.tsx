@@ -7,6 +7,7 @@ import { depoimentos } from "../utils/mock";
 import { useState } from "react";
 import { buscarEspecialistaPorEstado } from "../servicos/EspecialistaServico";
 import { CardConsulta } from "../componentes/CardConsulta";
+import React from 'react';
 
 interface Especialista {
   nome: string,
@@ -34,8 +35,8 @@ export default function Principal({navigation}){
   return (
     <ScrollView flex={1} bgColor="white">
       <VStack flex={1} alignItems="flex-start" justifyContent="flex-start" p={5}>
-        <Image source={Logo} alt="Logo" mt={10} />
-        <Titulo color="brown.400">Boas-vindas!</Titulo>
+        <Image source={Logo} alt="Logo" mt={10}  style={{height: 70, width: 150}}/>
+        <Titulo mt={0} color="brown.400">Boas-vindas!</Titulo>
 
         <Box w="100%" borderRadius="lg" p={3} mt={10} shadow="1" borderRightRadius="md">
         <EntradaTexto
@@ -52,9 +53,10 @@ export default function Principal({navigation}){
             Buscar
           </Botao>
         </Box>
+       
         {resultadoBusca?.map((especialista: Especialista, index) => (
-          <VStack flex={1} w="100%" alignItems="flex-start" bgColor="white" key={index}>
-            <CardConsulta
+          <VStack mt={5} flex={1} w="100%" alignItems="flex-start" bgColor="white" key={index}>
+            <CardConsulta 
               especialidade={especialista.especialidade}
               foto={especialista.imagem}
               nome={especialista.nome}

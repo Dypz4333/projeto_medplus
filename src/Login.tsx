@@ -1,5 +1,5 @@
 import { VStack, Image, Text, Box, Link, useToast } from 'native-base'
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity,View } from 'react-native';
 import Logo from './assets/Logo.png'
 import { Botao } from './componentes/Botao';
 import { EntradaTexto } from './componentes/EntradaTexto';
@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import { fazerLogin } from './servicos/AutenticacaoServico';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { jwtDecode } from 'jwt-decode';
+import React from 'react';
+
 
 
 export default function Login({ navigation }: any) {
@@ -53,7 +55,10 @@ export default function Login({ navigation }: any) {
 
   return (
     <VStack flex={1} alignItems="center" justifyContent="center" p={5}>
-      <Image source={Logo} alt="Logo Voll" />
+
+      <Image source={Logo} alt='Logo' style={{height: 100, width: 150}}/>
+
+
 
       <Titulo color={'orange.400'}>
         Faça login em sua conta
@@ -75,9 +80,11 @@ export default function Login({ navigation }: any) {
       </Box>
       <Botao w={'100%'} onPress={login}>Entrar</Botao>
 
-      <Link href='https://www.google.com.br' mt={2}>
-        Esqueceu sua senha?
-      </Link>
+      <TouchableOpacity onPress={() => navigation.navigate('VerificaEmail')}>
+          <Text mt={3} textDecorationLine={"underline"} color="brown.500">
+            Esqueci minha senha
+          </Text>
+        </TouchableOpacity>
 
       <Box w="100%" flexDirection="row" justifyContent="center" mt={8}>
         <Text>Ainda não tem cadastro? </Text>

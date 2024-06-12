@@ -8,6 +8,8 @@ import Cadastro from "./Cadastro";
 import Login from "./Login";
 import Tabs from "./Tabs";
 import Agendamento from "./Agendamento";
+import VerificaEmail from "./VerificaEmail"
+import alteraSenha from "./alteraSenha";
 
 export default function Rotas() {
   return (
@@ -24,6 +26,12 @@ export default function Rotas() {
         />
         <Tab.Screen
           name="Agendamento" component={Agendamento} options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="VerificaEmail" component={VerificaEmail} options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="alteraSenha" component={alteraSenha} options={{ headerShown: false }}
         />
       </Tab.Navigator>
     </NavigationContainer>

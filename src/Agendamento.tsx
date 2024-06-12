@@ -31,12 +31,14 @@ export default function Agendamento({ route, navigation }: any) {
     }
 
     return (
-        <VStack flex={1} alignItems="center" justifyContent="center" padding={5}>
-            <Titulo>Agendamento</Titulo>
-            <Input placeholder="Digite a data" onChangeText={setData} />
-            <Box width={"100%"} p={1}>
-                <Botao onPress={agendar}>Agendar</Botao>
-                <Botao mt={2} onPress={() => navigation.goBack()}>Voltar</Botao>
+        <VStack flex={1}>
+            <Botao w='20%' onPress={() => navigation.navigate('Login')}>{"<"}</Botao>
+            <Box flex={1} alignItems="center" justifyContent="center" padding={5}>
+                <Titulo>Agendamento</Titulo>
+                <Input placeholder="Digite a data" onChangeText={setData} />
+                <Box width={"100%"} p={1}>
+                    <Botao onPress={agendar}>Agendar</Botao>
+                </Box>
             </Box>
         </VStack>
     )

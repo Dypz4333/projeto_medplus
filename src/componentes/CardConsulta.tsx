@@ -20,14 +20,17 @@ export function CardConsulta({
   foiAtendido,
   onPress
 }: CardProps) {
+ 
+
+  
   return (
     <VStack w="100%" bg={foiAtendido ? 'gray.200' : 'white'} p="5" borderRadius="lg" shadow="2" mb={5}>
       <VStack flexDir="row">
         <Avatar size="lg" source={{ uri: foto }} />
         <VStack pl="4">
           <Text fontSize="md" bold>{nome}</Text>
-          <Text>{especialidade}</Text>
-          <Text>{data}</Text>
+          <Text fontWeight="semibold">{especialidade}</Text>
+          <Text fontWeight="semibold">{data}</Text>
         </VStack>
       </VStack>
       <Botao color='orange.400' mt={4} onPress={onPress}>

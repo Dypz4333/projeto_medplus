@@ -45,7 +45,6 @@ export default function Explorar({ navigation }) {
           <Botao mt={3} onPress={buscar}>
             Buscar
           </Botao>
-          <Botao mt={1} onPress={() => navigation.goBack()}>Voltar</Botao>
         </Box>
 
         <Titulo color="brown.500" alignSelf="center">Resultado da Busca</Titulo>
