@@ -9,6 +9,7 @@ import { buscarEspecialistaPorEstado } from "../servicos/EspecialistaServico";
 import { CardConsulta } from "../componentes/CardConsulta";
 import React from 'react';
 
+
 interface Especialista {
   nome: string,
   imagem: string,
@@ -17,7 +18,7 @@ interface Especialista {
 }
 
 
-export default function Principal({navigation}){
+export default function Principal({ navigation }) {
 
   const [estado, setEstado] = useState('');
   const [especialidade, setEspecialidade] = useState('');
@@ -35,11 +36,11 @@ export default function Principal({navigation}){
   return (
     <ScrollView flex={1} bgColor="white">
       <VStack flex={1} alignItems="flex-start" justifyContent="flex-start" p={5} bgColor="gray.100">
-        <Image source={Logo} alt="Logo" mt={10}  style={{height: 70, width: 150}}/>
+        <Image source={Logo} alt="Logo" mt={10} style={{ height: 70, width: 150 }} />
         <Titulo mt={0} color="brown.400">Boas-vindas!</Titulo>
 
         <Box w="100%" borderRadius="lg" p={3} mt={10} shadow="1" borderRightRadius="md" bgColor="white">
-        <EntradaTexto
+          <EntradaTexto
             placeholder="Digite a especialidade"
             value={especialidade}
             onChangeText={setEspecialidade}
@@ -53,10 +54,10 @@ export default function Principal({navigation}){
             Buscar
           </Botao>
         </Box>
-       
+
         {resultadoBusca?.map((especialista: Especialista, index) => (
           <VStack mt={5} flex={1} w="100%" alignItems="flex-start" bgColor="white" key={index}>
-            <CardConsulta 
+            <CardConsulta
               especialidade={especialista.especialidade}
               foto={especialista.imagem}
               nome={especialista.nome}

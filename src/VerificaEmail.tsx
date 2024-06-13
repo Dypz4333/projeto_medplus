@@ -1,6 +1,6 @@
 import { Button, VStack, useToast, Image, Box } from 'native-base'
 import { EntradaTexto } from "./componentes/EntradaTexto";
-import { verificaoEmail } from './servicos/PacienteServico';
+import {  verificaoEmail } from './servicos/PacienteServico';
 import React, { useState } from 'react';
 import { Botao } from './componentes/Botao';
 import Logo from './assets/Logo.png'

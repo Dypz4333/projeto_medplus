@@ -6,6 +6,7 @@ import Consultas from "./Consultas";
 import Explorar from "./Explorar";
 import Perfil from "./Perfil";
 import Recomendacoes from "./Recomendacoes"
+import Calorias from "./calculos/Calorias";
 
 const Tab = createBottomTabNavigator()
 
@@ -42,7 +43,7 @@ const tabs = [
     name: 'Recomendações',
     component: Recomendacoes,
     icon: 'add-circle-outline'
-  },
+  }
 ]
 
 export default function Tabs() {

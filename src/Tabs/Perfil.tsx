@@ -1,4 +1,4 @@
-import { VStack, Text, ScrollView, Avatar, Divider, useToast, View } from 'native-base';
+import { VStack, Text, ScrollView, Avatar, Divider, useToast, View,Button,Modal } from 'native-base';
 import { Titulo } from '../componentes/Titulo'
 import { pegarDadosPaciente } from '../servicos/PacienteServico'
 import { useEffect, useState } from 'react'
@@ -12,6 +12,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 export default function Perfil({ navigation }) {
   const [dadosPaciente, setDadosPaciente] = useState({} as Paciente);
   const [ampliado, setAmpliado] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
   const toast = useToast();
 
   useEffect(() => {

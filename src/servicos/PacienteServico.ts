@@ -34,15 +34,22 @@ export async function pegarDadosPaciente(id: string) {
   }
 }
 
-export async function editarDados(id: string) {
+export async function editarDados(id: string, novoNome: string, novoEmail: string, novoEstado: string, novoTelefone: string) {
   try {
-    const resultado = await api.put(`/paciente/${id}`);
+    const resultado = await api.put(`/paciente/${id}`, {
+      nome: novoNome,
+      email: novoEmail,
+      endereco: {
+        estado: novoEstado
+      },
+      telefone: novoTelefone
+    });
     return resultado.data;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 }
-
 export async function verificaoEmail(email: string) {
   try {
     const resultado = await api.get(`/paciente`);
