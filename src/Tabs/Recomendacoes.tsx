@@ -4,66 +4,56 @@ import { useNavigation } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { VStack } from 'native-base';
 import { Titulo } from '../componentes/Titulo';
+import { Botao } from '../componentes/Botao';
+import { BotaoFab } from '../componentes/BotaoFab';
 
-export default function Recomendacoes({navigation}) {
-    const [showAdditionalButtons, setShowAdditionalButtons] = useState(false);
+export default function Recomendacoes({ navigation }) {
 
     const styles = StyleSheet.create({
-        fab: {
-            position: 'absolute',
-            width: 56,
-            height: 56,
-            alignItems: 'center',
-            justifyContent: 'center',
-            right: 20,
-            bottom: 20,
-            backgroundColor: 'darkorange',
-            borderRadius: 30,
-            elevation: 8,
+        container: {
+            flex: 1,
+            padding: 20,
         },
-        additionalButtonsContainer: {
-            position: 'absolute',
-            right: 15,
-            bottom: 90,
-            flexDirection: 'column',
-        },
-        additionalButton: {
-            width: 48,
-            height: 48,
-            borderRadius: 24,
-            backgroundColor: 'darkorange',
+        aba: {
+            flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'center',
-            margin: 8,
-            elevation: 8,
+            marginBottom: 20,
+        },
+        descricao: {
+            marginLeft: 5,
+            flexShrink: 1,
         },
     });
 
     return (
-        <VStack flex={1} justifyContent={"center"} alignItems="center" p={5} bgColor="gray.100">
-            <Titulo>Recomendações de Saúde</Titulo>
-            <TouchableOpacity
-                style={styles.fab}
-                onPress={() => setShowAdditionalButtons(!showAdditionalButtons)}>
-                <Ionicons name={showAdditionalButtons ? "close-outline" : "add-outline"} size={32} color="white" />
-            </TouchableOpacity>
+        <VStack flex={1} justifyContent={"center"} alignItems="center" p={20} bgColor="gray.100">
+            <Titulo mb={3}>Recomendações de Saúde</Titulo>
+            <View style={styles.aba}>
+            <Ionicons name='water-outline' size={24} color='blue' />
+                <Text style={styles.descricao}>
+                Calcula a quantidade de água em mL que uma pessoa necessita consumir diariamente para manter a hidratação adequada para que você se mantenha saudável.
+                </Text>
+            </View>
+            <View style={styles.aba}>
+                <Ionicons name='pizza-outline' size={24} color='red' />
+                <Text style={styles.descricao}>
+                    Calcula a quantidade de calorias minimas que uma pessoa precisa consumir diariamente para satisfazer suas necessidades energéticas.
+                </Text>
+            </View>
+            <View style={styles.aba}>
+                <Ionicons name='fish-outline' size={24} color='green' />
+                <Text style={styles.descricao}>
+                    Calcula a quantidade de proteínas minimas que uma pessoa precisa consumir diariamente para manter uma ter uma vida mais saudável.
+                </Text>
+            </View>
+            <View style={styles.aba}>
+                <Ionicons name='body-outline' size={24} color='purple' />
+                <Text style={styles.descricao}>
+                    Calcula o Índice de Massa Corporal (IMC) de um usuário com base em sua altura e peso, fornecendo uma avaliação básica do peso corporal.
+                </Text>
+            </View>
 
-            {showAdditionalButtons && (
-                <View style={styles.additionalButtonsContainer}>
-                    <TouchableOpacity  onPress={() => navigation.navigate('Agua')} style={styles.additionalButton}>
-                        <Ionicons name="water-outline" size={24} color="white" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('Calorias')} style={styles.additionalButton}>
-                        <Ionicons name="pizza-outline" size={24} color="white" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('Proteinas')} style={styles.additionalButton}>
-                        <Ionicons name="fish-outline" size={24} color="white" />
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={() => navigation.navigate('Imc')} style={styles.additionalButton}>
-                        <Ionicons name="body-outline" size={24} color="white" />
-                    </TouchableOpacity>
-                </View>
-            )}
+            <BotaoFab navigation={navigation} />
         </VStack>
     )
 }
