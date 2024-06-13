@@ -20,9 +20,6 @@ export function CardConsulta({
   foiAtendido,
   onPress
 }: CardProps) {
- 
-
-  
   return (
     <VStack w="100%" bg={foiAtendido ? 'gray.200' : 'white'} p="5" borderRadius="lg" shadow="2" mb={5}>
       <VStack flexDir="row">

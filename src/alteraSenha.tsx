@@ -62,6 +62,7 @@ export default function AlteraSenha({ route, navigation }: any) {
             });
         }
     };
+    
 
     return (
         <VStack space={2} flex={1} alignItems="center" justifyContent="center" padding={'15%'}>

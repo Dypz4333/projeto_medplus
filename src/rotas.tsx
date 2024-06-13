@@ -10,6 +10,11 @@ import Tabs from "./Tabs";
 import Agendamento from "./Agendamento";
 import VerificaEmail from "./VerificaEmail"
 import alteraSenha from "./alteraSenha";
+import Imc from "./Tabs/calculos/Imc"
+import Proteinas from "./Tabs/calculos/Proteinas"
+import Calorias from "./Tabs/calculos/Calorias"
+import Recomendacoes from "./Tabs/Recomendacoes";
+import Agua from "./Tabs/calculos/Agua";
 
 export default function Rotas() {
   return (
@@ -32,6 +37,18 @@ export default function Rotas() {
         />
         <Tab.Screen
           name="alteraSenha" component={alteraSenha} options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Imc" component={Imc} options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Calorias" component={Calorias} options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Proteinas" component={Proteinas} options={{ headerShown: false }}
+        />
+        <Tab.Screen
+          name="Agua" component={Agua} options={{ headerShown: false }}
         />
       </Tab.Navigator>
     </NavigationContainer>

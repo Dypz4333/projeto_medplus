@@ -66,14 +66,13 @@ export async function alterarSenha(token: string, id: string, novaSenha: string)
       Authorization: `Bearer ${token}`
     };
 
-    const resultado = await api.put(`/paciente/${id}`, { senha: novaSenha }, { headers });
+    const resultado = await api.put(`/paciente/${token}`, { senha: novaSenha }, { headers });
     return resultado.data;
   } catch (error) {
     console.log("Erro ao alterar senha:", error);
     return null;
   }
 }
-
 
 
 

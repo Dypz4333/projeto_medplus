@@ -28,8 +28,8 @@ export default function Explorar({ navigation }) {
   }
 
   return (
-    <ScrollView flex={1} bgColor="white">
-      <VStack flex={1} alignItems="flex-start" justifyContent="flex-start" p={5}>
+    <ScrollView flex={1} bgColor="gray.100">
+      <VStack flex={1} alignItems="flex-start" justifyContent="flex-start" p={5} bgColor="gray.100" >
         <Titulo alignSelf={"center"} color={"brown.500"}>Agende aqui sua consulta</Titulo>
         <Box w="100%" borderRadius="lg" p={3} mt={5} shadow="1" borderRightRadius="md">
           <EntradaTexto

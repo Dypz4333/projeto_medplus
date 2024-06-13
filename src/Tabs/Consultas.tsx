@@ -70,7 +70,7 @@ export default function Consultas({ navigation }: NavigationProps<'Consultas'>) 
   
 
   return (
-    <ScrollView p="5">
+    <ScrollView p="5" >
       <Titulo color="black">Minhas consultas</Titulo>
       <Botao mt={5} mb={5} onPress={() => navigation.navigate('Explorar')}>Agendar nova consulta</Botao>
 

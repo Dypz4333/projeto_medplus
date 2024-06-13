@@ -5,14 +5,13 @@ import Principal from "./Principal";
 import Consultas from "./Consultas";
 import Explorar from "./Explorar";
 import Perfil from "./Perfil";
+import Recomendacoes from "./Recomendacoes"
 
 const Tab = createBottomTabNavigator()
 
 const screenOptions = {
   tabBarStyle: {
     backgroundColor: "darkorange",
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
   },
   tabBarActiveTintColor: "white",
   tabBarInactiveTintColor: "black",
@@ -38,7 +37,12 @@ const tabs = [
     name: 'Perfil',
     component: Perfil,
     icon: 'person'
-  }
+  },
+  {
+    name: 'Recomendações',
+    component: Recomendacoes,
+    icon: 'add-circle-outline'
+  },
 ]
 
 export default function Tabs() {
