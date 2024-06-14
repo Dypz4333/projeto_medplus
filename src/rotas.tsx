@@ -8,12 +8,9 @@ import Cadastro from "./Cadastro";
 import Login from "./Login";
 import Tabs from "./Tabs";
 import Agendamento from "./Agendamento";
-import VerificaEmail from "./VerificaEmail"
-import alteraSenha from "./alteraSenha";
 import Imc from "./Tabs/calculos/Imc"
 import Proteinas from "./Tabs/calculos/Proteinas"
 import Calorias from "./Tabs/calculos/Calorias"
-import Recomendacoes from "./Tabs/Recomendacoes";
 import Agua from "./Tabs/calculos/Agua";
 
 export default function Rotas() {
@@ -31,12 +28,6 @@ export default function Rotas() {
         />
         <Tab.Screen
           name="Agendamento" component={Agendamento} options={{ headerShown: false }}
-        />
-        <Tab.Screen
-          name="VerificaEmail" component={VerificaEmail} options={{ headerShown: false }}
-        />
-        <Tab.Screen
-          name="alteraSenha" component={alteraSenha} options={{ headerShown: false }}
         />
         <Tab.Screen
           name="Imc" component={Imc} options={{ headerShown: false }}

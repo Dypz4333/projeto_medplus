@@ -7,6 +7,7 @@ import { Paciente } from '../interfaces/Paciente';
 import { Botao } from '../componentes/Botao';
 import { TouchableOpacity } from 'react-native'
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import ModalComponent from '../componentes/Modal';
 
 
 export default function Perfil({ navigation }) {
@@ -14,6 +15,17 @@ export default function Perfil({ navigation }) {
   const [ampliado, setAmpliado] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const toast = useToast();
+
+
+  const openModal = () => {
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+
 
   useEffect(() => {
     async function dadosPaciente() {
@@ -39,7 +51,7 @@ export default function Perfil({ navigation }) {
     <ScrollView flex={1} bgColor="gray.100">
       <VStack flex={1} alignItems="center" p={5} bgColor="gray.100">
         <Titulo color="brown.500">Meu Perfil</Titulo>
-        <TouchableOpacity onPress={handleProfileClick}>
+        <TouchableOpacity onPress={openModal}>
           <Avatar size={ampliado ? '400' : 'xl'} borderColor={'black'} borderWidth={2} source={{ uri: dadosPaciente?.imagem }} mt={5} />
         </TouchableOpacity>
         <Titulo color="brown.500">Informações pessoais</Titulo>
@@ -57,9 +69,10 @@ export default function Perfil({ navigation }) {
         <Divider mt={5} />
         <Botao onPress={deslogar} >
           <View display={"flex"} color={'white'} flexDirection={"row"}>
-            <Text fontSize={'lg'} color={'white'}>Deslogar </Text><Ionicons name={"log-out-outline"} size={25} color="white" />
+            <Text fontSize={'lg'} color={'white'}>Deslogar </Text><Ionicons name="log-out-outline" size={25} color="white" />
           </View>
         </Botao>
+      <ModalComponent visible={modalVisible} onClose={closeModal} />
       </VStack>
     </ScrollView>
   )

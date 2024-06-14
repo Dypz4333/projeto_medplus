@@ -92,7 +92,7 @@ export default function Cadastro({ navigation }: any) {
     <ScrollView flex={1} p={5}>
 
       <Botao w='20%' onPress={() => navigation.navigate('Login')}>{"<"}</Botao>
-      <Image source={Logo} alt="Logo Voll" alignSelf="center" />
+      <Image source={Logo} alt="Logo Voll" style={{ height: 100, width: 150 }} alignSelf="center" />
 
 
 
@@ -125,6 +125,7 @@ export default function Cadastro({ navigation }: any) {
               <Checkbox
                 key={checkbox.id}
                 value={checkbox.value}
+                colorScheme="orange"
                 onChange={() => {
                   setPlanos((planosAnteriores) => {
                     if (planosAnteriores.includes(checkbox.id)) {
