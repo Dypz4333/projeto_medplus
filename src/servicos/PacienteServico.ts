@@ -1,5 +1,6 @@
 import { Paciente } from "../interfaces/Paciente";
 import api from "./api";
+import nodemailer from 'nodemailer';
 
 
 export async function cadastrarPaciente(paciente: Paciente) {
@@ -64,6 +65,35 @@ export async function verificaoEmail(email: string) {
   } catch (error) {
     console.log("Erro ao verificar email:", error);
     return false;
+  }
+}
+
+export async function enviarSenhaPorEmail(email: string, senha: string) {
+  try {
+    // Configurações de envio de email
+    const transporter = nodemailer.createTransport({
+      service: 'seu provedor de email', // Exemplo: 'Gmail', 'Outlook'
+      auth: {
+        user: 'seu-email@example.com', // Seu email
+        pass: 'sua-senha', // Sua senha
+      },
+    });
+
+    // Configurações do email
+    const mailOptions = {
+      from: 'seu-email@example.com',
+      to: email,
+      subject: 'Recuperação de senha',
+      text: `Sua nova senha é: ${senha}`,
+    };
+
+    // Envia o email
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Email enviado:', info.response);
+    return true; // Retorna true se o email for enviado com sucesso
+  } catch (error) {
+    console.error('Erro ao enviar o email:', error);
+    return false; // Retorna false se houver erro no envio do email
   }
 }
 

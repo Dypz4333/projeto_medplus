@@ -16,7 +16,7 @@ export default function Proteinas({ navigation }) {
         const pesoFloat = parseFloat(peso);
         if (!isNaN(pesoFloat)) {
             const proteinaMinima = pesoFloat * 1.2;
-            setProteinaRecomendada(proteinaMinima);
+            setProteinaRecomendada(proteinaMinima.toFixed(0));
         } else {
             setProteinaRecomendada(null);
         }

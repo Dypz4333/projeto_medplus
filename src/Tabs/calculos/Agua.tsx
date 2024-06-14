@@ -18,7 +18,7 @@ export default function Agua({ navigation }) {
         const pesoFloat = parseFloat(peso);
         if (!isNaN(pesoFloat)) {
             const aguaRecomendada = pesoFloat * 35;
-            setAguaRecomendada(aguaRecomendada.toFixed(2));
+            setAguaRecomendada(aguaRecomendada.toFixed(0));
         } else {
             setAguaRecomendada(null);
         }
