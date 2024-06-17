@@ -24,6 +24,7 @@ const ModalComponent = ({ visible, onClose }) => {
 
     const closeModal = () => {
         setModalVisible(false);
+        onClose()
     };
 
     return (

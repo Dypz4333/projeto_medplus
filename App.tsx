@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <NativeBaseProvider theme={Temas}>
-      <StatusBar backgroundColor={Temas.colors.blue[800]} />
+      <StatusBar backgroundColor={Temas.colors.orange[500]} />
       <Rotas />
     </NativeBaseProvider>
   );
