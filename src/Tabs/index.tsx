@@ -35,14 +35,14 @@ const tabs = [
     icon: 'search'
   },
   {
-    name: 'Perfil',
-    component: Perfil,
-    icon: 'person'
-  },
-  {
     name: 'Recomendações',
     component: Recomendacoes,
     icon: 'add-circle-outline'
+  },
+  {
+    name: 'Perfil',
+    component: Perfil,
+    icon: 'person'
   }
 ]
 
